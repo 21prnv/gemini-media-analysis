@@ -77,6 +77,7 @@ export default function CameraComponent() {
       canvas.toBlob(async (blob) => {
         if (blob) {
           // await saveFile(blob, "photo.png");
+          //hi
         }
       });
     }
