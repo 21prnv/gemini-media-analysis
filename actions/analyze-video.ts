@@ -34,8 +34,26 @@ export async function analyzeMedia(
               mimeType: "video/webm",
             },
           },
-          "Analyze this video content and describe what you see. Focus on the main actions and events.",
+          `Task: Analyze the content of a video review to determine if it complies with strict community guidelines. The video must not contain any of the following:
+
+    Vulgar Language: Offensive or crude language, including profanity or obscenities.
+    Hate Speech or Discrimination: Comments that promote hate or violence based on race, ethnicity, gender, religion, sexual orientation, or disability.
+    Illegal Activities: Promotion, depiction, or endorsement of illegal activities, including drugs, violence, theft, hacking, or fraud.
+    Sexually Explicit Content: Any form of sexual content, nudity, or sexually suggestive material.
+    Bullying or Harassment: Direct or indirect attacks on individuals, including threats, personal insults, or attempts to intimidate others.
+    Misinformation: False or misleading claims, especially those related to health, safety, or any topic that can cause harm to others.
+    Promoting Dangerous Behavior: Encouragement of dangerous activities such as self-harm, violence, reckless driving, or unsafe stunts.
+    Arrogance, Rudeness, or Aggressive Tone: Displays of excessive arrogance, rudeness, or a hostile attitude that could negatively affect others.
+    Malicious Content: Videos containing malware, spyware, or attempts to defraud viewers.
+    Spam or Advertising: Content that is purely promotional or used to deceive viewers into buying products/services without proper context or permission.
+
+    Response:
+
+    If the video contains any of the above prohibited content, return the following response: 'This video has not been published because it violates our strict community guidelines.'
+
+    If the video is appropriate and complies with the guidelines, return the following response: 'This video is good and complies with our strict community guidelines.'`,
         ]);
+
         return result.response.text();
       } catch (videoError) {
         console.error("Error analyzing video:", videoError);
