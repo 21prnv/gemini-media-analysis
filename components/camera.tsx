@@ -128,7 +128,7 @@ export default function CameraComponent() {
         setMediaAnalysis(analysis);
         if (analysis.includes("not supported")) {
           toast({
-            title: "Video Analysis Unavailable",
+            title: "Video Analysis Unavailable please try again later",
             description:
               "Video analysis is currently not supported. Please try with an image instead.",
             variant: "destructive",
